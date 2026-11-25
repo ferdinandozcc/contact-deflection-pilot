@@ -1,0 +1,2 @@
+pytest
+anthropic  # only needed for AGENT_MODE=llm

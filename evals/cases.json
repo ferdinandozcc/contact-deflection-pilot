@@ -1,0 +1,758 @@
+[
+ {
+  "id": "T01",
+  "text": "Hi, I bought a spa day voucher 3 days ago and changed my mind. Can I get my money back?",
+  "order": {
+   "deal_type": "local",
+   "days_since_purchase": 3,
+   "redeemed": false,
+   "appointment_booked": false,
+   "expired": false,
+   "final_sale": false,
+   "payment_valid": true,
+   "event_cancelled": false,
+   "days_since_delivery": null,
+   "prior_contacts": 0
+  },
+  "expected": {
+   "intent": "cancel_refund",
+   "action": "resolve",
+   "policy": "P-LOCAL-CANCEL"
+  }
+ },
+ {
+  "id": "T02",
+  "text": "I'd like to cancel the cooking class I purchased last week, haven't used it yet.",
+  "order": {
+   "deal_type": "local",
+   "days_since_purchase": 7,
+   "redeemed": false,
+   "appointment_booked": false,
+   "expired": false,
+   "final_sale": false,
+   "payment_valid": true,
+   "event_cancelled": false,
+   "days_since_delivery": null,
+   "prior_contacts": 0
+  },
+  "expected": {
+   "intent": "cancel_refund",
+   "action": "resolve",
+   "policy": "P-LOCAL-CANCEL"
+  }
+ },
+ {
+  "id": "T03",
+  "text": "Can I get a refund for the massage voucher? I bought it about a month ago, never used it.",
+  "order": {
+   "deal_type": "local",
+   "days_since_purchase": 31,
+   "redeemed": false,
+   "appointment_booked": false,
+   "expired": false,
+   "final_sale": false,
+   "payment_valid": true,
+   "event_cancelled": false,
+   "days_since_delivery": null,
+   "prior_contacts": 0
+  },
+  "expected": {
+   "intent": "cancel_refund",
+   "action": "resolve",
+   "policy": "P-LOCAL-CANCEL"
+  }
+ },
+ {
+  "id": "T04",
+  "text": "I want to cancel my order but I already booked an appointment for Saturday.",
+  "order": {
+   "deal_type": "local",
+   "days_since_purchase": 4,
+   "redeemed": false,
+   "appointment_booked": true,
+   "expired": false,
+   "final_sale": false,
+   "payment_valid": true,
+   "event_cancelled": false,
+   "days_since_delivery": null,
+   "prior_contacts": 0
+  },
+  "expected": {
+   "intent": "cancel_refund",
+   "action": "resolve",
+   "policy": "P-LOCAL-CANCEL"
+  }
+ },
+ {
+  "id": "T05",
+  "text": "Please refund my voucher, bought yesterday. The card I paid with was cancelled after my wallet got stolen.",
+  "order": {
+   "deal_type": "local",
+   "days_since_purchase": 1,
+   "redeemed": false,
+   "appointment_booked": false,
+   "expired": false,
+   "final_sale": false,
+   "payment_valid": false,
+   "event_cancelled": false,
+   "days_since_delivery": null,
+   "prior_contacts": 0
+  },
+  "expected": {
+   "intent": "cancel_refund",
+   "action": "handoff",
+   "policy": "P-PAYMENT-CHANGED"
+  }
+ },
+ {
+  "id": "T06",
+  "text": "I don't want Groupon credits, I want my money back on my card for the yoga pass.",
+  "order": {
+   "deal_type": "local",
+   "days_since_purchase": 6,
+   "redeemed": false,
+   "appointment_booked": false,
+   "expired": false,
+   "final_sale": false,
+   "payment_valid": true,
+   "event_cancelled": false,
+   "days_since_delivery": null,
+   "prior_contacts": 0
+  },
+  "expected": {
+   "intent": "cancel_refund",
+   "action": "resolve",
+   "policy": "P-LOCAL-CANCEL"
+  }
+ },
+ {
+  "id": "T07",
+  "text": "My voucher for the escape room expired last month, can I still use it or get a refund?",
+  "order": {
+   "deal_type": "local",
+   "days_since_purchase": 200,
+   "redeemed": false,
+   "appointment_booked": false,
+   "expired": true,
+   "final_sale": false,
+   "payment_valid": true,
+   "event_cancelled": false,
+   "days_since_delivery": null,
+   "prior_contacts": 0
+  },
+  "expected": {
+   "intent": "expired_voucher",
+   "action": "resolve",
+   "policy": "P-EXPIRED"
+  }
+ },
+ {
+  "id": "T08",
+  "text": "Voucher expired while I was in hospital for 6 weeks. I couldn't use it. Please help.",
+  "order": {
+   "deal_type": "local",
+   "days_since_purchase": 120,
+   "redeemed": false,
+   "appointment_booked": false,
+   "expired": true,
+   "final_sale": false,
+   "payment_valid": true,
+   "event_cancelled": false,
+   "days_since_delivery": null,
+   "prior_contacts": 0
+  },
+  "expected": {
+   "intent": "expired_voucher",
+   "action": "handoff",
+   "policy": "P-EXPIRED"
+  }
+ },
+ {
+  "id": "T09",
+  "text": "The restaurant voucher expired yesterday, I forgot about it. Any chance?",
+  "order": {
+   "deal_type": "local",
+   "days_since_purchase": 90,
+   "redeemed": false,
+   "appointment_booked": false,
+   "expired": true,
+   "final_sale": false,
+   "payment_valid": true,
+   "event_cancelled": false,
+   "days_since_delivery": null,
+   "prior_contacts": 0
+  },
+  "expected": {
+   "intent": "expired_voucher",
+   "action": "resolve",
+   "policy": "P-EXPIRED"
+  }
+ },
+ {
+  "id": "T10",
+  "text": "My voucher says redeemed but I never used it! Someone else must have.",
+  "order": {
+   "deal_type": "local",
+   "days_since_purchase": 5,
+   "redeemed": true,
+   "appointment_booked": false,
+   "expired": false,
+   "final_sale": false,
+   "payment_valid": true,
+   "event_cancelled": false,
+   "days_since_delivery": null,
+   "prior_contacts": 0
+  },
+  "expected": {
+   "intent": "already_redeemed",
+   "action": "handoff",
+   "policy": "P-ALREADY-REDEEMED"
+  }
+ },
+ {
+  "id": "T11",
+  "text": "App shows my teeth whitening voucher as used. I haven't been there yet.",
+  "order": {
+   "deal_type": "local",
+   "days_since_purchase": 5,
+   "redeemed": true,
+   "appointment_booked": false,
+   "expired": false,
+   "final_sale": false,
+   "payment_valid": true,
+   "event_cancelled": false,
+   "days_since_delivery": null,
+   "prior_contacts": 0
+  },
+  "expected": {
+   "intent": "already_redeemed",
+   "action": "handoff",
+   "policy": "P-ALREADY-REDEEMED"
+  }
+ },
+ {
+  "id": "T12",
+  "text": "The salon refused to accept my voucher today, said they don't take Groupon anymore.",
+  "order": {
+   "deal_type": "local",
+   "days_since_purchase": 5,
+   "redeemed": false,
+   "appointment_booked": false,
+   "expired": false,
+   "final_sale": false,
+   "payment_valid": true,
+   "event_cancelled": false,
+   "days_since_delivery": null,
+   "prior_contacts": 0
+  },
+  "expected": {
+   "intent": "merchant_refused",
+   "action": "handoff",
+   "policy": "P-MERCHANT-REFUSED"
+  }
+ },
+ {
+  "id": "T13",
+  "text": "Merchant won't accept the code, says it's not valid. It's not expired.",
+  "order": {
+   "deal_type": "local",
+   "days_since_purchase": 5,
+   "redeemed": false,
+   "appointment_booked": false,
+   "expired": false,
+   "final_sale": false,
+   "payment_valid": true,
+   "event_cancelled": false,
+   "days_since_delivery": null,
+   "prior_contacts": 0
+  },
+  "expected": {
+   "intent": "merchant_refused",
+   "action": "handoff",
+   "policy": "P-MERCHANT-REFUSED"
+  }
+ },
+ {
+  "id": "T14",
+  "text": "The gym has closed down permanently. What happens to my voucher?",
+  "order": {
+   "deal_type": "local",
+   "days_since_purchase": 40,
+   "redeemed": false,
+   "appointment_booked": false,
+   "expired": false,
+   "final_sale": false,
+   "payment_valid": true,
+   "event_cancelled": false,
+   "days_since_delivery": null,
+   "prior_contacts": 0
+  },
+  "expected": {
+   "intent": "merchant_closed",
+   "action": "resolve",
+   "policy": "P-MERCHANT-CLOSED"
+  }
+ },
+ {
+  "id": "T15",
+  "text": "I've been calling the hotel for two weeks, nobody answers the phone or emails.",
+  "order": {
+   "deal_type": "getaway",
+   "days_since_purchase": 20,
+   "redeemed": false,
+   "appointment_booked": false,
+   "expired": false,
+   "final_sale": false,
+   "payment_valid": true,
+   "event_cancelled": false,
+   "days_since_delivery": null,
+   "prior_contacts": 0
+  },
+  "expected": {
+   "intent": "merchant_closed",
+   "action": "resolve",
+   "policy": "P-MERCHANT-CLOSED"
+  }
+ },
+ {
+  "id": "T16",
+  "text": "I can't find any available dates to book my paintball session.",
+  "order": {
+   "deal_type": "local",
+   "days_since_purchase": 10,
+   "redeemed": false,
+   "appointment_booked": false,
+   "expired": false,
+   "final_sale": false,
+   "payment_valid": true,
+   "event_cancelled": false,
+   "days_since_delivery": null,
+   "prior_contacts": 0
+  },
+  "expected": {
+   "intent": "cant_book",
+   "action": "resolve",
+   "policy": "P-CANT-BOOK"
+  }
+ },
+ {
+  "id": "T17",
+  "text": "How do I move my facial appointment from Thursday to next week?",
+  "order": {
+   "deal_type": "local",
+   "days_since_purchase": 5,
+   "redeemed": false,
+   "appointment_booked": true,
+   "expired": false,
+   "final_sale": false,
+   "payment_valid": true,
+   "event_cancelled": false,
+   "days_since_delivery": null,
+   "prior_contacts": 0
+  },
+  "expected": {
+   "intent": "appointment_change",
+   "action": "resolve",
+   "policy": "P-APPT-CHANGE"
+  }
+ },
+ {
+  "id": "T18",
+  "text": "I need to cancel tomorrow's appointment, something came up.",
+  "order": {
+   "deal_type": "local",
+   "days_since_purchase": 5,
+   "redeemed": false,
+   "appointment_booked": true,
+   "expired": false,
+   "final_sale": false,
+   "payment_valid": true,
+   "event_cancelled": false,
+   "days_since_delivery": null,
+   "prior_contacts": 0
+  },
+  "expected": {
+   "intent": "appointment_change",
+   "action": "resolve",
+   "policy": "P-APPT-CHANGE"
+  }
+ },
+ {
+  "id": "T19",
+  "text": "Can I book the second session of my laser package before the first one?",
+  "order": {
+   "deal_type": "local",
+   "days_since_purchase": 5,
+   "redeemed": false,
+   "appointment_booked": true,
+   "expired": false,
+   "final_sale": false,
+   "payment_valid": true,
+   "event_cancelled": false,
+   "days_since_delivery": null,
+   "prior_contacts": 0
+  },
+  "expected": {
+   "intent": "appointment_change",
+   "action": "resolve",
+   "policy": "P-APPT-CHANGE"
+  }
+ },
+ {
+  "id": "T20",
+  "text": "The headphones I ordered arrived yesterday, I want to send them back.",
+  "order": {
+   "deal_type": "goods",
+   "days_since_purchase": 5,
+   "redeemed": false,
+   "appointment_booked": false,
+   "expired": false,
+   "final_sale": false,
+   "payment_valid": true,
+   "event_cancelled": false,
+   "days_since_delivery": 1,
+   "prior_contacts": 0
+  },
+  "expected": {
+   "intent": "goods_return",
+   "action": "resolve",
+   "policy": "P-GOODS-RETURN"
+  }
+ },
+ {
+  "id": "T21",
+  "text": "Want to return the air fryer, it arrived 3 weeks ago, I just don't like it.",
+  "order": {
+   "deal_type": "goods",
+   "days_since_purchase": 5,
+   "redeemed": false,
+   "appointment_booked": false,
+   "expired": false,
+   "final_sale": false,
+   "payment_valid": true,
+   "event_cancelled": false,
+   "days_since_delivery": 21,
+   "prior_contacts": 0
+  },
+  "expected": {
+   "intent": "goods_return",
+   "action": "resolve",
+   "policy": "P-GOODS-RETURN"
+  }
+ },
+ {
+  "id": "T22",
+  "text": "The vacuum stopped working after 2 days. It's broken. What do I do?",
+  "order": {
+   "deal_type": "goods",
+   "days_since_purchase": 5,
+   "redeemed": false,
+   "appointment_booked": false,
+   "expired": false,
+   "final_sale": false,
+   "payment_valid": true,
+   "event_cancelled": false,
+   "days_since_delivery": 2,
+   "prior_contacts": 0
+  },
+  "expected": {
+   "intent": "goods_faulty",
+   "action": "resolve",
+   "policy": "P-GOODS-RETURN"
+  }
+ },
+ {
+  "id": "T23",
+  "text": "I sent the watch back to the seller a month ago and still no refund. This is my third message about it.",
+  "order": {
+   "deal_type": "goods",
+   "days_since_purchase": 5,
+   "redeemed": false,
+   "appointment_booked": false,
+   "expired": false,
+   "final_sale": false,
+   "payment_valid": true,
+   "event_cancelled": false,
+   "days_since_delivery": 45,
+   "prior_contacts": 2
+  },
+  "expected": {
+   "intent": "refund_status",
+   "action": "handoff",
+   "policy": "P-GOODS-RETURN"
+  }
+ },
+ {
+  "id": "T24",
+  "text": "You confirmed my refund 3 days ago, it's not on my card yet. When will it arrive?",
+  "order": {
+   "deal_type": "local",
+   "days_since_purchase": 5,
+   "redeemed": false,
+   "appointment_booked": false,
+   "expired": false,
+   "final_sale": false,
+   "payment_valid": true,
+   "event_cancelled": false,
+   "days_since_delivery": null,
+   "prior_contacts": 0
+  },
+  "expected": {
+   "intent": "refund_status",
+   "action": "resolve",
+   "policy": "P-REFUND-TIMING"
+  }
+ },
+ {
+  "id": "T25",
+  "text": "Where is my refund?? Cancelled on Monday.",
+  "order": {
+   "deal_type": "local",
+   "days_since_purchase": 5,
+   "redeemed": false,
+   "appointment_booked": false,
+   "expired": false,
+   "final_sale": false,
+   "payment_valid": true,
+   "event_cancelled": false,
+   "days_since_delivery": null,
+   "prior_contacts": 0
+  },
+  "expected": {
+   "intent": "refund_status",
+   "action": "resolve",
+   "policy": "P-REFUND-TIMING"
+  }
+ },
+ {
+  "id": "T26",
+  "text": "The concert was cancelled by the organiser. How do I get my money back?",
+  "order": {
+   "deal_type": "live",
+   "days_since_purchase": 5,
+   "redeemed": false,
+   "appointment_booked": false,
+   "expired": false,
+   "final_sale": true,
+   "payment_valid": true,
+   "event_cancelled": true,
+   "days_since_delivery": null,
+   "prior_contacts": 0
+  },
+  "expected": {
+   "intent": "live_event",
+   "action": "resolve",
+   "policy": "P-LIVE"
+  }
+ },
+ {
+  "id": "T27",
+  "text": "Bought theatre tickets an hour ago by mistake, wrong date. Can I cancel?",
+  "order": {
+   "deal_type": "live",
+   "days_since_purchase": 0,
+   "redeemed": false,
+   "appointment_booked": false,
+   "expired": false,
+   "final_sale": false,
+   "payment_valid": true,
+   "event_cancelled": false,
+   "days_since_delivery": null,
+   "prior_contacts": 0
+  },
+  "expected": {
+   "intent": "live_event",
+   "action": "resolve",
+   "policy": "P-LIVE"
+  }
+ },
+ {
+  "id": "T28",
+  "text": "I can't go to the show anymore, can I get a refund? Bought them last week.",
+  "order": {
+   "deal_type": "live",
+   "days_since_purchase": 7,
+   "redeemed": false,
+   "appointment_booked": false,
+   "expired": false,
+   "final_sale": true,
+   "payment_valid": true,
+   "event_cancelled": false,
+   "days_since_delivery": null,
+   "prior_contacts": 0
+  },
+  "expected": {
+   "intent": "live_event",
+   "action": "resolve",
+   "policy": "P-LIVE"
+  }
+ },
+ {
+  "id": "T29",
+  "text": "If I don't get a refund today I'm filing a chargeback with my bank.",
+  "order": {
+   "deal_type": "local",
+   "days_since_purchase": 20,
+   "redeemed": false,
+   "appointment_booked": false,
+   "expired": false,
+   "final_sale": false,
+   "payment_valid": true,
+   "event_cancelled": false,
+   "days_since_delivery": null,
+   "prior_contacts": 0
+  },
+  "expected": {
+   "intent": "cancel_refund",
+   "action": "handoff",
+   "policy": "ESC-LEGAL"
+  }
+ },
+ {
+  "id": "T30",
+  "text": "I will report you to trading standards, the spa was nothing like the description.",
+  "order": {
+   "deal_type": "local",
+   "days_since_purchase": 5,
+   "redeemed": true,
+   "appointment_booked": false,
+   "expired": false,
+   "final_sale": false,
+   "payment_valid": true,
+   "event_cancelled": false,
+   "days_since_delivery": null,
+   "prior_contacts": 0
+  },
+  "expected": {
+   "intent": "complaint",
+   "action": "handoff",
+   "policy": "ESC-LEGAL"
+  }
+ },
+ {
+  "id": "T31",
+  "text": "There's a purchase on my account I didn't make. I think I've been hacked.",
+  "order": {
+   "deal_type": "local",
+   "days_since_purchase": 5,
+   "redeemed": false,
+   "appointment_booked": false,
+   "expired": false,
+   "final_sale": false,
+   "payment_valid": true,
+   "event_cancelled": false,
+   "days_since_delivery": null,
+   "prior_contacts": 0
+  },
+  "expected": {
+   "intent": "fraud",
+   "action": "handoff",
+   "policy": "ESC-FRAUD"
+  }
+ },
+ {
+  "id": "T32",
+  "text": "My husband passed away and he had bought us a weekend away. I can't go. Can I get the money back?",
+  "order": {
+   "deal_type": "getaway",
+   "days_since_purchase": 60,
+   "redeemed": false,
+   "appointment_booked": false,
+   "expired": false,
+   "final_sale": false,
+   "payment_valid": true,
+   "event_cancelled": false,
+   "days_since_delivery": null,
+   "prior_contacts": 0
+  },
+  "expected": {
+   "intent": "cancel_refund",
+   "action": "handoff",
+   "policy": "ESC-VULNERABLE"
+  }
+ },
+ {
+  "id": "T33",
+  "text": "Still waiting on my refund for the massage, this is the third time I write. Nobody fixes it.",
+  "order": {
+   "deal_type": "local",
+   "days_since_purchase": 5,
+   "redeemed": false,
+   "appointment_booked": false,
+   "expired": false,
+   "final_sale": false,
+   "payment_valid": true,
+   "event_cancelled": false,
+   "days_since_delivery": null,
+   "prior_contacts": 2
+  },
+  "expected": {
+   "intent": "refund_status",
+   "action": "handoff",
+   "policy": "ESC-REPEAT"
+  }
+ },
+ {
+  "id": "T34",
+  "text": "hello",
+  "order": {
+   "deal_type": "local",
+   "days_since_purchase": 5,
+   "redeemed": false,
+   "appointment_booked": false,
+   "expired": false,
+   "final_sale": false,
+   "payment_valid": true,
+   "event_cancelled": false,
+   "days_since_delivery": null,
+   "prior_contacts": 0
+  },
+  "expected": {
+   "intent": "other",
+   "action": "handoff",
+   "policy": "ESC-LOWCONF"
+  }
+ },
+ {
+  "id": "T35",
+  "text": "My voucher expired and also the merchant closed before I could use it, and I want a refund.",
+  "order": {
+   "deal_type": "local",
+   "days_since_purchase": 150,
+   "redeemed": false,
+   "appointment_booked": false,
+   "expired": true,
+   "final_sale": false,
+   "payment_valid": true,
+   "event_cancelled": false,
+   "days_since_delivery": null,
+   "prior_contacts": 0
+  },
+  "expected": {
+   "intent": "merchant_closed",
+   "action": "handoff",
+   "policy": "ESC-LOWCONF"
+  }
+ },
+ {
+  "id": "T36",
+  "text": "Where can I find my voucher code? I can't see it in the app.",
+  "order": {
+   "deal_type": "local",
+   "days_since_purchase": 5,
+   "redeemed": false,
+   "appointment_booked": false,
+   "expired": false,
+   "final_sale": false,
+   "payment_valid": true,
+   "event_cancelled": false,
+   "days_since_delivery": null,
+   "prior_contacts": 0
+  },
+  "expected": {
+   "intent": "find_voucher",
+   "action": "resolve",
+   "policy": "P-FIND-VOUCHER"
+  }
+ }
+]

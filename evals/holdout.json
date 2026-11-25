@@ -1,0 +1,422 @@
+[
+ {
+  "id": "H01",
+  "text": "hey so i got this voucher on friday for a massage and honestly dont need it anymore, can u reverse it",
+  "order": {
+   "deal_type": "local",
+   "days_since_purchase": 4,
+   "redeemed": false,
+   "appointment_booked": false,
+   "expired": false,
+   "final_sale": false,
+   "payment_valid": true,
+   "event_cancelled": false,
+   "days_since_delivery": null,
+   "prior_contacts": 0
+  },
+  "expected": {
+   "intent": "cancel_refund",
+   "action": "resolve",
+   "policy": "P-LOCAL-CANCEL"
+  }
+ },
+ {
+  "id": "H02",
+  "text": "Hola, compré un bono de spa hace dos días y quiero que me devolváis el dinero.",
+  "order": {
+   "deal_type": "local",
+   "days_since_purchase": 2,
+   "redeemed": false,
+   "appointment_booked": false,
+   "expired": false,
+   "final_sale": false,
+   "payment_valid": true,
+   "event_cancelled": false,
+   "days_since_delivery": null,
+   "prior_contacts": 0
+  },
+  "expected": {
+   "intent": "cancel_refund",
+   "action": "resolve",
+   "policy": "P-LOCAL-CANCEL"
+  }
+ },
+ {
+  "id": "H03",
+  "text": "Buongiorno, il ristorante ha chiuso definitivamente. Come posso avere il rimborso?",
+  "order": {
+   "deal_type": "local",
+   "days_since_purchase": 30,
+   "redeemed": false,
+   "appointment_booked": false,
+   "expired": false,
+   "final_sale": false,
+   "payment_valid": true,
+   "event_cancelled": false,
+   "days_since_delivery": null,
+   "prior_contacts": 0
+  },
+  "expected": {
+   "intent": "merchant_closed",
+   "action": "resolve",
+   "policy": "P-MERCHANT-CLOSED"
+  }
+ },
+ {
+  "id": "H04",
+  "text": "the place wouldn't let me in with the coupon, guy at the desk said its not a valid code and it's NOT expired",
+  "order": {
+   "deal_type": "local",
+   "days_since_purchase": 5,
+   "redeemed": false,
+   "appointment_booked": false,
+   "expired": false,
+   "final_sale": false,
+   "payment_valid": true,
+   "event_cancelled": false,
+   "days_since_delivery": null,
+   "prior_contacts": 0
+  },
+  "expected": {
+   "intent": "merchant_refused",
+   "action": "handoff",
+   "policy": "P-MERCHANT-REFUSED"
+  }
+ },
+ {
+  "id": "H05",
+  "text": "Is there any way to push my booking for the boat trip to a later date?",
+  "order": {
+   "deal_type": "local",
+   "days_since_purchase": 5,
+   "redeemed": false,
+   "appointment_booked": true,
+   "expired": false,
+   "final_sale": false,
+   "payment_valid": true,
+   "event_cancelled": false,
+   "days_since_delivery": null,
+   "prior_contacts": 0
+  },
+  "expected": {
+   "intent": "appointment_change",
+   "action": "resolve",
+   "policy": "P-APPT-CHANGE"
+  }
+ },
+ {
+  "id": "H06",
+  "text": "Mi bono aparece como canjeado pero yo no lo he usado nunca.",
+  "order": {
+   "deal_type": "local",
+   "days_since_purchase": 5,
+   "redeemed": true,
+   "appointment_booked": false,
+   "expired": false,
+   "final_sale": false,
+   "payment_valid": true,
+   "event_cancelled": false,
+   "days_since_delivery": null,
+   "prior_contacts": 0
+  },
+  "expected": {
+   "intent": "already_redeemed",
+   "action": "handoff",
+   "policy": "P-ALREADY-REDEEMED"
+  }
+ },
+ {
+  "id": "H07",
+  "text": "got charged twice for the same deal??",
+  "order": {
+   "deal_type": "local",
+   "days_since_purchase": 5,
+   "redeemed": false,
+   "appointment_booked": false,
+   "expired": false,
+   "final_sale": false,
+   "payment_valid": true,
+   "event_cancelled": false,
+   "days_since_delivery": null,
+   "prior_contacts": 0
+  },
+  "expected": {
+   "intent": "other",
+   "action": "handoff",
+   "policy": "ESC-LOWCONF"
+  }
+ },
+ {
+  "id": "H08",
+  "text": "My mum has been very ill and in and out of hospital, she couldn't use her voucher before it ran out.",
+  "order": {
+   "deal_type": "local",
+   "days_since_purchase": 150,
+   "redeemed": false,
+   "appointment_booked": false,
+   "expired": true,
+   "final_sale": false,
+   "payment_valid": true,
+   "event_cancelled": false,
+   "days_since_delivery": null,
+   "prior_contacts": 0
+  },
+  "expected": {
+   "intent": "expired_voucher",
+   "action": "handoff",
+   "policy": "P-EXPIRED"
+  }
+ },
+ {
+  "id": "H09",
+  "text": "the blender came with a cracked jug",
+  "order": {
+   "deal_type": "goods",
+   "days_since_purchase": 5,
+   "redeemed": false,
+   "appointment_booked": false,
+   "expired": false,
+   "final_sale": false,
+   "payment_valid": true,
+   "event_cancelled": false,
+   "days_since_delivery": 3,
+   "prior_contacts": 0
+  },
+  "expected": {
+   "intent": "goods_faulty",
+   "action": "resolve",
+   "policy": "P-GOODS-RETURN"
+  }
+ },
+ {
+  "id": "H10",
+  "text": "Ho cancellato l'ordine lunedì, quando arriva il rimborso sulla carta?",
+  "order": {
+   "deal_type": "local",
+   "days_since_purchase": 5,
+   "redeemed": false,
+   "appointment_booked": false,
+   "expired": false,
+   "final_sale": false,
+   "payment_valid": true,
+   "event_cancelled": false,
+   "days_since_delivery": null,
+   "prior_contacts": 0
+  },
+  "expected": {
+   "intent": "refund_status",
+   "action": "resolve",
+   "policy": "P-REFUND-TIMING"
+  }
+ },
+ {
+  "id": "H11",
+  "text": "I'm talking to my solicitor about this deal if it isn't sorted",
+  "order": {
+   "deal_type": "local",
+   "days_since_purchase": 5,
+   "redeemed": true,
+   "appointment_booked": false,
+   "expired": false,
+   "final_sale": false,
+   "payment_valid": true,
+   "event_cancelled": false,
+   "days_since_delivery": null,
+   "prior_contacts": 0
+  },
+  "expected": {
+   "intent": "complaint",
+   "action": "handoff",
+   "policy": "ESC-LEGAL"
+  }
+ },
+ {
+  "id": "H12",
+  "text": "Can't get through to the merchant at all, tried phone email and instagram",
+  "order": {
+   "deal_type": "local",
+   "days_since_purchase": 25,
+   "redeemed": false,
+   "appointment_booked": false,
+   "expired": false,
+   "final_sale": false,
+   "payment_valid": true,
+   "event_cancelled": false,
+   "days_since_delivery": null,
+   "prior_contacts": 0
+  },
+  "expected": {
+   "intent": "merchant_closed",
+   "action": "resolve",
+   "policy": "P-MERCHANT-CLOSED"
+  }
+ },
+ {
+  "id": "H13",
+  "text": "no slots left for any date before my voucher ends, what now",
+  "order": {
+   "deal_type": "local",
+   "days_since_purchase": 60,
+   "redeemed": false,
+   "appointment_booked": false,
+   "expired": false,
+   "final_sale": false,
+   "payment_valid": true,
+   "event_cancelled": false,
+   "days_since_delivery": null,
+   "prior_contacts": 0
+  },
+  "expected": {
+   "intent": "cant_book",
+   "action": "resolve",
+   "policy": "P-CANT-BOOK"
+  }
+ },
+ {
+  "id": "H14",
+  "text": "I'd rather have the cash than bucks for the cancelled gig please",
+  "order": {
+   "deal_type": "live",
+   "days_since_purchase": 5,
+   "redeemed": false,
+   "appointment_booked": false,
+   "expired": false,
+   "final_sale": true,
+   "payment_valid": true,
+   "event_cancelled": true,
+   "days_since_delivery": null,
+   "prior_contacts": 0
+  },
+  "expected": {
+   "intent": "live_event",
+   "action": "resolve",
+   "policy": "P-LIVE"
+  }
+ },
+ {
+  "id": "H15",
+  "text": "Someone used my account to buy 3 vouchers this morning",
+  "order": {
+   "deal_type": "local",
+   "days_since_purchase": 5,
+   "redeemed": false,
+   "appointment_booked": false,
+   "expired": false,
+   "final_sale": false,
+   "payment_valid": true,
+   "event_cancelled": false,
+   "days_since_delivery": null,
+   "prior_contacts": 0
+  },
+  "expected": {
+   "intent": "fraud",
+   "action": "handoff",
+   "policy": "ESC-FRAUD"
+  }
+ },
+ {
+  "id": "H16",
+  "text": "No encuentro el código del bono en la app",
+  "order": {
+   "deal_type": "local",
+   "days_since_purchase": 5,
+   "redeemed": false,
+   "appointment_booked": false,
+   "expired": false,
+   "final_sale": false,
+   "payment_valid": true,
+   "event_cancelled": false,
+   "days_since_delivery": null,
+   "prior_contacts": 0
+  },
+  "expected": {
+   "intent": "find_voucher",
+   "action": "resolve",
+   "policy": "P-FIND-VOUCHER"
+  }
+ },
+ {
+  "id": "H17",
+  "text": "I didn't realise the voucher had a time limit, it lapsed last week",
+  "order": {
+   "deal_type": "local",
+   "days_since_purchase": 180,
+   "redeemed": false,
+   "appointment_booked": false,
+   "expired": true,
+   "final_sale": false,
+   "payment_valid": true,
+   "event_cancelled": false,
+   "days_since_delivery": null,
+   "prior_contacts": 0
+  },
+  "expected": {
+   "intent": "expired_voucher",
+   "action": "resolve",
+   "policy": "P-EXPIRED"
+  }
+ },
+ {
+  "id": "H18",
+  "text": "fourth time asking. refund for the facial. sort it out.",
+  "order": {
+   "deal_type": "local",
+   "days_since_purchase": 5,
+   "redeemed": false,
+   "appointment_booked": false,
+   "expired": false,
+   "final_sale": false,
+   "payment_valid": true,
+   "event_cancelled": false,
+   "days_since_delivery": null,
+   "prior_contacts": 3
+  },
+  "expected": {
+   "intent": "refund_status",
+   "action": "handoff",
+   "policy": "ESC-REPEAT"
+  }
+ },
+ {
+  "id": "H19",
+  "text": "Want to send back the jacket, wrong size, came on tuesday",
+  "order": {
+   "deal_type": "goods",
+   "days_since_purchase": 5,
+   "redeemed": false,
+   "appointment_booked": false,
+   "expired": false,
+   "final_sale": false,
+   "payment_valid": true,
+   "event_cancelled": false,
+   "days_since_delivery": 2,
+   "prior_contacts": 0
+  },
+  "expected": {
+   "intent": "goods_return",
+   "action": "resolve",
+   "policy": "P-GOODS-RETURN"
+  }
+ },
+ {
+  "id": "H20",
+  "text": "Quiero cancelar la reserva del hotel, el establecimiento no contesta y ya pagué.",
+  "order": {
+   "deal_type": "getaway",
+   "days_since_purchase": 15,
+   "redeemed": false,
+   "appointment_booked": false,
+   "expired": false,
+   "final_sale": false,
+   "payment_valid": true,
+   "event_cancelled": false,
+   "days_since_delivery": null,
+   "prior_contacts": 0
+  },
+  "expected": {
+   "intent": "merchant_closed",
+   "action": "resolve",
+   "policy": "P-MERCHANT-CLOSED"
+  }
+ }
+]
